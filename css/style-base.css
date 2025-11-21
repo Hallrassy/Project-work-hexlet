@@ -1,0 +1,378 @@
+/* style-base.css
+   Базовые и общие стили для всех страниц сайта
+   Переменные, типография, header, footer, утилиты
+
+*/
+
+/* Переменные :root — значения по умолчанию (светлая тема) */
+:root{
+    --font-sans: "Sora", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --color-primary: #2563eb;
+    --color-accent: #06b6d4;
+    --color-bg: #ffffff;
+    --color-surface: #f8fafc;
+    --color-text: #0f172a;
+    --color-muted: #6b7280;
+    --radius: 12px;
+    --shadow-soft: 0 6px 20px rgba(16,24,40,0.08);
+    --transition-fast: 180ms ease;
+    --max-width: 1200px;
+}
+
+/* Утилита .visually-hidden — спрятать элемент визуально, но оставить для скринридеров */
+.visually-hidden{
+    position:absolute !important;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0 0 0 0);
+    white-space:nowrap;
+    border:0;
+}
+
+/* Переменные тёмной темы — через :has() при отмеченном чекбоксе темы */
+html:has(input#themeToggle:checked){
+    --color-bg: #0b1220;
+    --color-surface: #0f1f3c;
+    --color-text: #f0f4fb;
+    --color-muted: #b8c5d6;
+    --color-primary: #7eb3ff;
+    --color-accent: #4de3f2;
+}
+
+/* Базовые настройки */
+html{
+    font-size:16px;
+}
+
+body{
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Контейнер */
+.container{
+    width: 100%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Отступы секций */
+section{
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+/* Хедер */
+/* Шапка сайта */
+.siteHeader{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(6px);
+    background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 2px 6px rgba(16,24,40,0.02);
+}
+
+/* Внутренняя часть хедера */
+.headerInner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+    gap: 16px;
+}
+
+/* Логотип */
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Текст логотипа (малый) */
+.logoText{
+    font-weight:700;
+}
+
+/* Основная навигация */
+.mainNav{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Список навигации */
+.navList{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+.navList a{
+    font-weight:600;
+    color: var(--color-text);
+    padding:8px 12px;
+    border-radius:8px;
+    transition: var(--transition-fast);
+}
+
+.navList a:hover{
+    transform: translateY(-2px);
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+}
+
+/* Действия в хедере */
+.headerActions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Лейбл переключателя темы */
+.themeToggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content:center;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* Гамбургер (иконка меню) */
+.hamburger{
+    display: none;
+    cursor: pointer;
+    width:44px;
+    height:44px;
+    border-radius:10px;
+    align-items:center;
+    justify-content:center;
+    position: relative;
+}
+
+.hamburger span{
+    display:block;
+    width:22px;
+    height:2px;
+    margin:4px 0;
+    background-color: var(--color-text);
+    border-radius:2px;
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* Мобильная навигация */
+.mobileNav{
+    display:none;
+    background-color: var(--color-bg);
+    border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+.mobileNavList{
+    list-style:none;
+    padding:12px 24px;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.mobileNavList a{
+    padding:12px;
+    border-radius:8px;
+    color: var(--color-text);
+}
+
+/* Показывать мобильное меню, когда menuToggle отмечен (он сосед .mobileNav) */
+input#menuToggle:checked ~ .mobileNav{
+    display:block;
+}
+
+/* Анимировать гамбургер в крестик при открытом меню */
+/* headerInner — сосед input#menuToggle, поэтому таргетим .hamburger через общий сосед */
+input#menuToggle:checked ~ .headerInner .hamburger span:first-child{
+    transform: translateY(6px) rotate(45deg);
+}
+
+input#menuToggle:checked ~ .headerInner .hamburger span:nth-child(2){
+    opacity: 0;
+}
+
+input#menuToggle:checked ~ .headerInner .hamburger span:last-child{
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Футер */
+.siteFooter{
+    border-top: 1px solid rgba(0,0,0,0.04);
+    background-color: var(--color-surface);
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.footerInner{
+    display: flex;
+    gap: 20px;
+    align-items:flex-start;
+    justify-content: space-between;
+}
+
+/* Колонки футера */
+.footerCol{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width: 180px;
+}
+
+/* Навигация в футере */
+.footerNav{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+/* Кнопки */
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content:center;
+    gap:10px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor:pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    border: none;
+    background: none;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Основная кнопка */
+.btn.primary{
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Пустая (прозрачная) кнопка */
+.btn.ghost{
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Модификатор небольшой кнопки */
+.btn.small{
+    padding:8px 12px;
+    font-size:14px;
+}
+
+/* Модалка (на CSS) */
+.modal{
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 120;
+    padding: 24px;
+    background-color: rgba(2,6,23,0.45);
+}
+
+/* Показывать модалку при отмеченном чекбоксе (общий сосед) */
+input#contactModalOpen:checked ~ .modal{
+    display:flex;
+}
+
+.modalDialog{
+    width: 100%;
+    max-width: 720px;
+    background-color: var(--color-bg);
+    border-radius: 14px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(2,6,23,0.4);
+}
+
+.modalClose{
+    position:absolute;
+    right:16px;
+    top:14px;
+    cursor:pointer;
+    padding:8px;
+}
+
+/* Форма в модальном окне */
+.modalForm{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* Доступность: состояние focus */
+a:focus, button:focus, input:focus, textarea:focus{
+    outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    outline-offset: 2px;
+}
+
+/* Убираем горизонтальную прокрутку */
+html, body{
+    overflow-x: hidden;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px){
+    .navList{
+        display:none;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px){
+    .headerInner{
+        height: 72px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .logoText{
+        display:none;
+    }
+
+    .btn{
+        padding: 10px 14px;
+    }
+}

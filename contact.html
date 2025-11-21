@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Контакты — StudioPro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/style-contact.css" />
+    <link rel="stylesheet" href="./css/style-base.css" />
+    <link rel="stylesheet" href="./css/style-contact.css" />
+</head>
+<body>
+    <input type="checkbox" id="themeToggle" class="visually-hidden" aria-hidden="true" />
+
+    <div class="site">
+        <header class="siteHeader" role="banner">
+            <input type="checkbox" id="menuToggle" class="visually-hidden" aria-hidden="true" />
+
+            <div class="container headerInner">
+                <a class="logo" href="index.html" aria-label="StudioPro — Главная">
+                    <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                        <rect x="4" y="10" width="40" height="28" rx="6" />
+                    </svg>
+                    <span class="logoText">StudioPro</span>
+                </a>
+
+                <nav class="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="navList">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="headerActions">
+                    <label for="themeToggle" class="themeToggle" title="Переключить тему" aria-hidden="true">🌓</label>
+
+                    <label for="menuToggle" class="hamburger" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <nav class="mobileNav" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobileNavList">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="siteMain">
+            <section class="contactHero" aria-labelledby="contactHeading">
+                <div class="container">
+                    <h1 id="contactHeading">Связаться с нами</h1>
+                    <p>Оставьте сообщение — мы ответим в рабочие часы в течение 1–2 дней.</p>
+                </div>
+            </section>
+
+            <section class="contactSection" aria-labelledby="formHeading">
+                <div class="container contactInner">
+                    <div class="contactInfo">
+                        <h2 id="formHeading">Контакты</h2>
+                        <p>Тел: <a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+                        <p>Email: <a href="mailto:hello@studiopro.example">hello@studiopro.example</a></p>
+                        <p>Адрес: г. Алматы, ул. Примерная, 12</p>
+
+                        <div class="contactMap" role="img" aria-label="Схематичная карта">
+                            <picture>
+                                <source type="image/webp" srcset="./assets/vxkstufuczhpj3n3c6uqhl6kpyi.webp" />
+                                <img src="./assets/vxkstufuczhpj3n3c6uqhl6kpyi.web" alt="Схематичная карта офиса StudioPro" width="600" height="360" loading="lazy" />
+                            </picture>
+                        </div>
+                    </div>
+
+                    <aside class="contactFormWrap" aria-labelledby="formHeading">
+                        <form class="contactForm" action="/send" method="post" novalidate>
+                            <label>
+                                <span>Имя</span>
+                                <input type="text" name="name" required minlength="2" />
+                            </label>
+
+                            <label>
+                                <span>Email</span>
+                                <input type="email" name="email" required />
+                            </label>
+
+                            <label>
+                                <span>Телефон</span>
+                                <input type="tel" name="phone" />
+                            </label>
+
+                            <label>
+                                <span>Сообщение</span>
+                                <textarea name="message" rows="6" required></textarea>
+                            </label>
+
+                            <div class="formActions">
+                                <button type="submit" class="btn primary">Отправить</button>
+                                <button type="reset" class="btn ghost">Сбросить</button>
+                            </div>
+                        </form>
+                    </aside>
+                </div>
+            </section>
+        </main>
+
+        <footer class="siteFooter" role="contentinfo">
+            <div class="container footerInner">
+                <div class="footerCol">
+                    <a class="logo footerLogo" href="index.html" aria-label="StudioPro — Главная">
+                        <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                            <rect x="4" y="10" width="40" height="28" rx="6" />
+                        </svg>
+                        <span>StudioPro</span>
+                    </a>
+                    <p>© <span id="yearContact">2025</span> StudioPro. Все права защищены.</p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Контакты</h4>
+                    <p>Тел: <a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:hello@studiopro.example">hello@studiopro.example</a></p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Навигация</h4>
+                    <ul class="footerNav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

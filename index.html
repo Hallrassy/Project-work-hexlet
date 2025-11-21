@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudioPro — веб-студия и дизайн</title>
+
+    <!-- Подключаем Google Fonts (WOFF2) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style-base.css" />
+    <link rel="stylesheet" href="./css/style-index.css" />
+</head>
+<body>
+    <!-- Чекбокс переключения темы -->
+    <input type="checkbox" id="themeToggle" class="visually-hidden" aria-hidden="true" />
+
+    <div class="site">
+    <!-- Хедер — общая шапка сайта -->
+        <header class="siteHeader" role="banner">
+            <!-- Чекбокс меню (menuToggle) -->
+            <input type="checkbox" id="menuToggle" class="visually-hidden" aria-hidden="true" />
+
+            <div class="container headerInner">
+                <a class="logo" href="index.html" aria-label="StudioPro — Главная">
+                    <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                        <rect x="4" y="10" width="40" height="28" rx="6" />
+                        <path d="M10 18h28" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span class="logoText">StudioPro</span>
+                </a>
+
+                <!-- Навигация для десктопа -->
+                <nav class="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="navList">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="#portfolio">Портфолио</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Меню -->
+                <div class="headerActions">
+                    <label for="themeToggle" class="themeToggle" title="Переключить тему" aria-hidden="true">🌓</label>
+
+                    <!-- Мобильный гамбургер -->
+                    <label for="menuToggle" class="hamburger" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Мобильная навигация — раскрывается через чекбокс menuToggle -->
+            <nav class="mobileNav" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobileNavList">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <!-- Основной контент страницы -->
+        <main class="siteMain" id="top">
+            <section class="heroSection" aria-labelledby="heroHeading">
+                <div class="container heroInner">
+                    <div class="heroText">
+                        <h1 id="heroHeading">Создаем удобные и современные веб-решения</h1>
+                        <p>Веб-дизайн, разработка, брендинг и поддержка. Комплексные услуги для малого и среднего бизнеса.</p>
+
+                        <div class="heroActions">
+                            <a class="btn primary" href="services.html">Наши услуги</a>
+                            <!-- Метка открывает модальное окно через чекбокс -->
+                            <label class="btn ghost" for="contactModalOpen" role="button">Заказать консультацию</label>
+                        </div>
+                    </div>
+
+                    <div class="heroMedia">
+                        <picture>
+                            <source type="image/webp" srcset="./assets/187f0a41-09f8-49a3-a245-414e335c99fa.webp" sizes="(max-width: 768px) 90vw, 50vw">
+                            <img src="./assets/187f0a41-09f8-49a3-a245-414e335c99fa.webp" alt="Рабочее пространство дизайнера" width="800" height="560" loading="lazy" />
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок превью услуг -->
+            <section class="servicesPreview" aria-labelledby="servicesHeading">
+                <div class="container">
+                    <h2 id="servicesHeading">Ключевые услуги</h2>
+
+                    <div class="servicesGrid">
+                        <!-- Карточка услуги — 1 -->
+                        <article class="serviceCard">
+                            <div class="cardMedia">
+                                <img src="./assets/free-icon-web-design-2868174.webp" alt="Иконка веб-дизайна" width="120" height="120" loading="lazy" />
+                            </div>
+                            <div class="cardBody">
+                                <h3>Веб-дизайн</h3>
+                                <p>Адаптивные макеты, прототипы, UI/UX-исследования и дизайн-системы.</p>
+                                <a class="cardMore" href="services.html#web-design">Подробнее →</a>
+                            </div>
+                        </article>
+
+                        <!-- Карточка услуги — 2 -->
+                        <article class="serviceCard">
+                            <div class="cardMedia">
+                                <img src="./assets/gratis-png-iconos-frontales-y-posteriores-de-la-computadora-desarrollo-web-front-end-programacion.webp" alt="Иконка разработки" width="120" height="120" loading="lazy" />
+                            </div>
+                            <div class="cardBody">
+                                <h3>Frontend-разработка</h3>
+                                <p>Чистый код, доступность, оптимизация и кроссбраузерность.</p>
+                                <a class="cardMore" href="services.html#frontend">Подробнее →</a>
+                            </div>
+                        </article>
+
+                        <!-- Карточка услуги — 3 -->
+                        <article class="serviceCard">
+                            <div class="cardMedia">
+                                <img src="./assets/diamond_shine_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Иконка брендинга" width="120" height="120" loading="lazy" />
+                            </div>
+                            <div class="cardBody">
+                                <h3>Брендинг</h3>
+                                <p>Логотипы, гайдлайны, упаковка и визуальная стратегия.</p>
+                                <a class="cardMore" href="services.html#branding">Подробнее →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Портфолио — слайдер проектов -->
+            <section class="portfolioSection" id="portfolio" aria-labelledby="portfolioHeading">
+                <div class="container">
+                    <h2 id="portfolioHeading">Портфолио</h2>
+
+                    <!-- Слайдер -->
+                    <div class="slider" aria-hidden="false">
+                        <input type="radio" name="slide" id="slide1" class="visually-hidden" checked />
+                        <input type="radio" name="slide" id="slide2" class="visually-hidden" />
+                        <input type="radio" name="slide" id="slide3" class="visually-hidden" />
+
+                        <div class="slides">
+                            <div class="slide" aria-hidden="false">
+                                <picture>
+                                    <source type="image/webp" srcset="./assets/187f0a41-09f8-49a3-a245-414e335c99fa.webp" />
+                                    <img src="assets/port-1.jpg" alt="Проект: интернет-магазин" width="1200" height="720" loading="lazy" />
+                                </picture>
+                                <div class="slideCaption">
+                                    <h3>Интернет-магазин</h3>
+                                    <p>Полный редизайн корзины и улучшение конверсии.</p>
+                                </div>
+                            </div>
+
+                            <div class="slide" aria-hidden="true">
+                                <picture>
+                                    <source type="image/webp" srcset="./assets/187f0a41-09f8-49a3-a245-414e335c99fa.webp" />
+                                    <img src="assets/port-2.jpg" alt="Проект: корпоративный сайт" width="1200" height="720" loading="lazy" />
+                                </picture>
+                                <div class="slideCaption">
+                                    <h3>Корпоративный сайт</h3>
+                                    <p>Презентация услуги и система управления контентом.</p>
+                                </div>
+                            </div>
+
+                            <div class="slide" aria-hidden="true">
+                                <picture>
+                                    <source type="image/webp" srcset="./assets/187f0a41-09f8-49a3-a245-414e335c99fa.webp" />
+                                    <img src="assets/port-3.jpg" alt="Проект: лендинг" width="1200" height="720" loading="lazy" />
+                                </picture>
+                                <div class="slideCaption">
+                                    <h3>Лендинг</h3>
+                                    <p>Оптимизация посадочной страницы под рекламу.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sliderControls">
+                            <label for="slide1" class="dot" aria-label="Слайд 1"></label>
+                            <label for="slide2" class="dot" aria-label="Слайд 2"></label>
+                            <label for="slide3" class="dot" aria-label="Слайд 3"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ctaSection" aria-labelledby="ctaHeading">
+                <div class="container ctaInner">
+                    <h2 id="ctaHeading">Готовы обсудить проект?</h2>
+                    <p>Оставьте заявку и мы подготовим план и смету в течение 48 часов.</p>
+                    <div class="ctaActions">
+                        <a class="btn primary" href="contact.html">Связаться</a>
+                        <!-- Метка открывает модальное окно через чекбокс -->
+                        <label class="btn ghost" for="contactModalOpen" role="button">Быстрая заявка</label>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <!-- Футер  -->
+        <footer class="siteFooter" role="contentinfo">
+            <div class="container footerInner">
+                <div class="footerCol">
+                    <a class="logo footerLogo" href="index.html" aria-label="StudioPro — Главная">
+                        <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                            <rect x="4" y="10" width="40" height="28" rx="6" />
+                        </svg>
+                        <span>StudioPro</span>
+                    </a>
+                    <p>© <span id="year">2025</span> StudioPro. Все права защищены.</p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Контакты</h4>
+                    <p>Тел: <a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:hello@studiopro.example">hello@studiopro.example</a></p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Навигация</h4>
+                    <ul class="footerNav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно  -->
+    <input type="checkbox" id="contactModalOpen" class="visually-hidden" />
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modalDialog" role="document">
+            <label for="contactModalOpen" class="modalClose" aria-label="Закрыть окно">✕</label>
+            <h3 id="modalTitle">Быстрая заявка</h3>
+            <form action="/send" method="post" class="modalForm">
+                <label>
+                    <span>Имя</span>
+                    <input type="text" name="name" required minlength="2" />
+                </label>
+                <label>
+                    <span>Email или телефон</span>
+                    <input type="text" name="contact" required />
+                </label>
+                <label>
+                    <span>Коротко о задаче</span>
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <div class="modalActions">
+                    <button type="submit" class="btn primary">Отправить</button>
+                    <label for="contactModalOpen" class="btn ghost">Отмена</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Услуги — StudioPro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style-base.css" />
+    <link rel="stylesheet" href="./css/style-services.css" />
+</head>
+<body>
+    <input type="checkbox" id="themeToggle" class="visually-hidden" aria-hidden="true" />
+
+    <div class="site">
+        <header class="siteHeader" role="banner">
+            <input type="checkbox" id="menuToggle" class="visually-hidden" aria-hidden="true" />
+
+            <div class="container headerInner">
+                <a class="logo" href="index.html" aria-label="StudioPro — Главная">
+                    <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                        <rect x="4" y="10" width="40" height="28" rx="6" />
+                    </svg>
+                    <span class="logoText">StudioPro</span>
+                </a>
+
+                <nav class="mainNav" role="navigation" aria-label="Main navigation">
+                    <ul class="navList">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                        <li><a href="#allServices">Каталог</a></li>
+                    </ul>
+                </nav>
+
+                <div class="headerActions">
+                    <label for="themeToggle" class="themeToggle" title="Переключить тему" aria-hidden="true">🌓</label>
+
+                    <label for="menuToggle" class="hamburger" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <nav class="mobileNav" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobileNavList">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="#allServices">Каталог</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="siteMain">
+            <section class="catalogHero" aria-labelledby="catalogHeading">
+                <div class="container">
+                    <h1 id="catalogHeading">Каталог услуг</h1>
+                    <p>Ниже — полный перечень услуг с описаниями и ориентировочными сроками.</p>
+                </div>
+            </section>
+
+            <section class="catalogSection" id="allServices" aria-labelledby="catalogListHeading">
+                <div class="container">
+                    <h2 id="catalogListHeading">Услуги и пакеты</h2>
+
+                    <div class="catalogGrid">
+                        <!-- 8 карточек услуг -->
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Веб-дизайн — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="web-design">Веб-дизайн</h3>
+                                <p>Полный цикл создания интерфейсов: исследования, прототипы, дизайн макеты, адаптивность.</p>
+                                <p class="meta">Срок: от 2 недель</p>
+                                <a class="btn small" href="#web-design">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Frontend — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="frontend">Frontend-разработка</h3>
+                                <p>Адаптивная верстка, производительность, поддерживаемость и accessibility.</p>
+                                <p class="meta">Срок: от 1 недели</p>
+                                <a class="btn small" href="#frontend">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Брендинг — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="branding">Брендинг</h3>
+                                <p>Создание логотипа, фирменного стиля и гайдлайна для единообразия коммуникации.</p>
+                                <p class="meta">Срок: от 1 недели</p>
+                                <a class="btn small" href="#branding">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Поддержка — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="maintenance">Техническая поддержка</h3>
+                                <p>Мониторинг, обновления, резервные копии и улучшения безопасности.</p>
+                                <p class="meta">Подписка: ежемесячно</p>
+                                <a class="btn small" href="#maintenance">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="SEO — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="seo">SEO и маркетинг</h3>
+                                <p>Аудит, оптимизация, контент-стратегия и поддержка рекламных кампаний.</p>
+                                <p class="meta">Срок: от 1 месяца</p>
+                                <a class="btn small" href="#seo">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Аналитика — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="analytics">Аналитика</h3>
+                                <p>Настройка метрик, цели, воронки продаж и отчеты для улучшения продукта.</p>
+                                <p class="meta">Срок: от 2 недель</p>
+                                <a class="btn small" href="#analytics">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Консалтинг — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="consult">Консалтинг</h3>
+                                <p>Технические рекомендации, стратегии развития и помощь в выборe технологий.</p>
+                                <p class="meta">Срок: по договоренности</p>
+                                <a class="btn small" href="#consult">Заказать</a>
+                            </div>
+                        </article>
+
+                        <article class="catalogCard">
+                            <div class="catalogMedia">
+                                <img src="./assets/images.jfif" alt="Обучение — карточка" width="480" height="320" loading="lazy" />
+                            </div>
+                            <div class="catalogBody">
+                                <h3 id="training">Обучение и воркшопы</h3>
+                                <p>Курсы по дизайну, верстке, Git и практическим инструментам команды.</p>
+                                <p class="meta">Срок: от 1 дня</p>
+                                <a class="btn small" href="#training">Заказать</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="siteFooter" role="contentinfo">
+            <div class="container footerInner">
+                <div class="footerCol">
+                    <a class="logo footerLogo" href="index.html" aria-label="StudioPro — Главная">
+                        <svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true" focusable="false" role="img">
+                            <rect x="4" y="10" width="40" height="28" rx="6" />
+                        </svg>
+                        <span>StudioPro</span>
+                    </a>
+                    <p>© <span id="yearServices">2025</span> StudioPro. Все права защищены.</p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Контакты</h4>
+                    <p>Тел: <a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+                    <p>Email: <a href="mailto:hello@studiopro.example">hello@studiopro.example</a></p>
+                </div>
+
+                <div class="footerCol">
+                    <h4>Навигация</h4>
+                    <ul class="footerNav">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
