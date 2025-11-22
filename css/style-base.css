@@ -338,6 +338,42 @@ input#contactModalOpen:checked ~ .modal{
     gap:12px;
 }
 
+/* Стили label в форме */
+.modalForm label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-weight:600;
+    color: var(--color-text);
+    font-size:14px;
+}
+
+/* Стили input и textarea в форме */
+.modalForm input,
+.modalForm textarea{
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.06);
+    min-height:44px;
+    font-size:16px;
+    font-family: inherit;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    transition: border-color var(--transition-fast);
+}
+
+.modalForm input:focus,
+.modalForm textarea:focus{
+    border-color: var(--color-primary);
+    background-color: var(--color-bg);
+}
+
+/* Действия формы (кнопки) */
+.modalForm .modalActions{
+    display:flex;
+    gap:12px;
+}
+
 /* Доступность: состояние focus */
 a:focus, button:focus, input:focus, textarea:focus{
     outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
